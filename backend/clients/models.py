@@ -1,3 +1,6 @@
+from django.db import models
+
+# Create your models here.
 
 TYPE_CHOICES = [
     ('entreprise', 'Entreprise'),
@@ -21,7 +24,7 @@ class Client(models.Model):
     
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
-
+    
     class Meta:
         verbose_name = 'Client'
         verbose_name_plural = 'Clients'
