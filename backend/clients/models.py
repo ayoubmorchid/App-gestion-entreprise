@@ -1,3 +1,5 @@
+from django.db import models
+
 
 TYPE_CHOICES = [
     ('entreprise', 'Entreprise'),
