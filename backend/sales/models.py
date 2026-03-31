@@ -1,10 +1,9 @@
 from django.db import models
-
-# Create your models here.
-from django.db import models
 from django.contrib.auth.models import User
 from django.utils.translation import gettext_lazy as _
 from clients.models import Client
+
+# Create your models here.
 
 class SaleStatus(models.TextChoices):
     DRAFT = 'draft', 'Brouillon'
@@ -25,3 +24,11 @@ class Sale(models.Model):
     remaining_amount = models.DecimalField(default=0, max_digits=12, decimal_places=2)
     notes = models.TextField(blank=True)
     created_by = models.ForeignKey(User, on_delete=models.SET_NULL, null=True, related_name='created_sales')
+
+    class Meta:
+        verbose_name = _('Vente')
+        verbose_name_plural = _('Ventes')
+        ordering = ['-date_sale']
+
+    def __str__(self):
+        return f"{self.sale_number} - {self.client}"
