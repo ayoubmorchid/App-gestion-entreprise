@@ -6,7 +6,11 @@ from django.contrib.auth.models import User
 from django.utils.translation import gettext_lazy as _
 from clients.models import Client
 
-
+class SaleStatus(models.TextChoices):
+    DRAFT = 'draft', 'Brouillon'
+    CONFIRMED = 'confirmed', 'Confirmée'
+    PAID = 'paid', 'Payée'
+    CANCELLED = 'cancelled', 'Annulée'
 
 class Sale(models.Model):
     sale_number = models.CharField(_('numéro vente'), max_length=50, unique=True)
