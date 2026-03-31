@@ -16,7 +16,7 @@ class Category(models.Model):
         return self.name
 
 
-class Products(models.Model):
+class Product(models.Model):
     name = models.CharField(('nom'), max_length=255)
     description = models.TextField(blank=True)
 
