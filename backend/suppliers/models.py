@@ -7,7 +7,7 @@ TYPE_CHOICES = [
 ]
 
 # Create your models here.
-class Suppliers (models.Moldel):
+class Suppliers (models.Model):
     nom = models.CharField(max_length=200)
     type_suppliers = models.CharField(max_length=20, choices=TYPE_CHOICES, default='particulier')
     ice = models.CharField(max_length=20, blank=True)
